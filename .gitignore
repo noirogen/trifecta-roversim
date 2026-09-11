@@ -104,3 +104,7 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Project Specific
+Assets/TextMesh Pro/Examples*&*Extras/
+Assets/TextMesh Pro/Examples*&*Extras.meta
