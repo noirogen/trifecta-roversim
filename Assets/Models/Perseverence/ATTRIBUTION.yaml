@@ -1,0 +1,32 @@
+asset:
+  name: Mars Perseverance Rover, 3D Model
+  description: 3D model of the Mars 2020 Perseverance rover, used as the base mesh for the rover in this simulation.
+  source_page: https://science.nasa.gov/resource/mars-perseverance-rover-3d-model/
+  publisher: NASA Science
+  credit: NASA/JPL-Caltech
+  mission: Mars 2020 Perseverance
+  mission_page: https://mars.nasa.gov/mars2020/
+  published: 2020-06-10
+  source_files_dated: 2024-03-08
+  downloads:
+    - format: glTF (.glb)
+      size_mb: 11.15
+      url: https://assets.science.nasa.gov/content/dam/science/psd/mars/resources/gltf_files/25042_Perseverance.glb
+    - format: USDZ (.usdz)
+      size_mb: 12.70
+      url: https://assets.science.nasa.gov/content/dam/science/psd/mars/resources/usdz_files/25042_Perseverance.usdz
+
+usage:
+  notes:
+    - NASA media is generally not protected by copyright and may be used for educational or informational purposes.
+    - Attribution to NASA/JPL-Caltech is requested.
+    - NASA does not endorse any product, service, or entity; this project is not affiliated with or endorsed by NASA.
+    - The NASA insignia, logo, and seal are subject to separate restrictions and are not used in this project.
+  guidelines: https://www.nasa.gov/nasa-brand-center/images-and-media/
+
+modifications:
+  - Imported into Unity and separated into a drivetrain hierarchy for physics simulation.
+  - Suspension components rigged with ArticulationBody joints (rockers, bogies, steering disks, wheels).
+  - Simplified convex collision meshes added for wheels and chassis.
+
+attribution_line: Mars Perseverance Rover 3D model courtesy of NASA/JPL-Caltech.
