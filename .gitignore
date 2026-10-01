@@ -108,3 +108,6 @@ InitTestScene*.unity*
 # Project Specific
 Assets/TextMesh Pro/Examples*&*Extras/
 Assets/TextMesh Pro/Examples*&*Extras.meta
+
+# Ml-agents logs
+Assets/ML-Agents/Timers/
