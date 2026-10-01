@@ -1,0 +1,11 @@
+behaviors:
+  TestBehavior:
+    trainer_type: ppo
+    hyperparameters:
+      buffer_size: 20480
+    network_settings:
+      hidden_units: 256
+      vis_encode_type: simple
+    time_horizon: 128
+    summary_freq: 10000
+    checkpoint_interval: 200000
