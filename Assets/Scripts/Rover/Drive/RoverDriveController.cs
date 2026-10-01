@@ -33,6 +33,8 @@ namespace Rover
 
         public void SetCommandSource(IDriveCommandSource newSource) => source = newSource;
 
+        public void ResetSteer() => currentSteer = 0f;
+
         private void Awake()
         {
             source = commandSource as IDriveCommandSource;
