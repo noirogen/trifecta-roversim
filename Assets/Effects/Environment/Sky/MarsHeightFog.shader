@@ -47,6 +47,7 @@ Shader "Custom/Mars Height Fog"
             CBUFFER_END
 
             float4 _MarsSunDir;
+            float _MarsFogSuppress;
 
             half4 Frag(Varyings input) : SV_Target
             {
@@ -93,6 +94,7 @@ Shader "Custom/Mars Height Fog"
                     fog = min(1.0 - exp(-opticalDepth), _MaxOpacity);
                 }
 
+                fog *= 1.0 - saturate(_MarsFogSuppress);
                 scene.rgb = lerp(scene.rgb, fogCol, fog);
                 return scene;
             }
