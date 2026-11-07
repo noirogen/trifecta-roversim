@@ -15,11 +15,14 @@ namespace Training
             lastDistance = distanceToGoal;
         }
 
-        public float Step(float distanceToGoal, float deltaTime)
+        public float Step(float distanceToGoal, float forwardSpeed, float deltaTime)
         {
             float progress = lastDistance - distanceToGoal;
             lastDistance = distanceToGoal;
-            return progress * rules.ProgressRewardPerMeter - rules.TimePenaltyPerSecond * deltaTime;
+            float reversed = forwardSpeed < 0f ? -forwardSpeed * deltaTime : 0f;
+            return progress * rules.ProgressRewardPerMeter
+                   - reversed * rules.ReversePenaltyPerMeter
+                   - rules.TimePenaltyPerSecond * deltaTime;
         }
 
         public float Final(EpisodeOutcome outcome)

@@ -167,7 +167,7 @@ MonoBehaviour:
       Layers: 3
       VisualEncoder: simple
     BatchSize: 1024
-    BufferSize: 20480
+    BufferSize: 10240
     LearningRate: 0.0003
     Beta: 0.005
     Epsilon: 0.2

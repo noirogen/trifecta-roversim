@@ -2370,6 +2370,10 @@ PrefabInstance:
       propertyPath: trainer.TimeScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6455376546211775665, guid: c9acc0e92e6634546af1946734224f4d, type: 3}
+      propertyPath: trainerConfig.BufferSize
+      value: 10240
+      objectReference: {fileID: 0}
     - target: {fileID: 6605497031338955241, guid: c9acc0e92e6634546af1946734224f4d, type: 3}
       propertyPath: m_Name
       value: GameManager

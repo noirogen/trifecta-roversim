@@ -124,7 +124,7 @@ namespace Training
 
             float deltaTime = Time.fixedDeltaTime;
             timer.Advance(deltaTime);
-            rover.AddReward(rewards.Step(DistanceToGoal(), deltaTime));
+            rover.AddReward(rewards.Step(DistanceToGoal(), ForwardSpeed(), deltaTime));
 
             EpisodeOutcome outcome = monitor.Evaluate(chassis, layout.Goal, Arena, timer);
             if (outcome != EpisodeOutcome.Running)
@@ -149,6 +149,11 @@ namespace Training
         {
             Vector3 up = ground.rotation * Vector3.up;
             return new Pose(ground.position + up * (groundClearance + setup.Arena.SpawnGap), ground.rotation);
+        }
+
+        private float ForwardSpeed()
+        {
+            return Vector3.Dot(rover.Chassis.linearVelocity, chassis.forward);
         }
 
         private float DistanceToGoal()
