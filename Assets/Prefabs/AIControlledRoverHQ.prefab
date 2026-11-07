@@ -797,7 +797,7 @@ MonoBehaviour:
   m_SensorName: Hazcam Front_R_Outer
   m_Width: 84
   m_Height: 84
-  m_Grayscale: 0
+  m_Grayscale: 1
   m_ObservationType: 0
   m_RuntimeCameraEnable: 0
   m_ObservationStacks: 1
@@ -3875,7 +3875,7 @@ MonoBehaviour:
   m_SensorName: Hazcam_Rear_R
   m_Width: 84
   m_Height: 84
-  m_Grayscale: 0
+  m_Grayscale: 1
   m_ObservationType: 0
   m_RuntimeCameraEnable: 0
   m_ObservationStacks: 1
@@ -6422,7 +6422,7 @@ MonoBehaviour:
   m_SensorName: Hazcam Front_R_Inner
   m_Width: 84
   m_Height: 84
-  m_Grayscale: 0
+  m_Grayscale: 1
   m_ObservationType: 0
   m_RuntimeCameraEnable: 0
   m_ObservationStacks: 1
@@ -9440,7 +9440,7 @@ MonoBehaviour:
   m_SensorName: Hazcam Front_L_Inner
   m_Width: 84
   m_Height: 84
-  m_Grayscale: 0
+  m_Grayscale: 1
   m_ObservationType: 0
   m_RuntimeCameraEnable: 0
   m_ObservationStacks: 1
@@ -10040,7 +10040,7 @@ MonoBehaviour:
   m_SensorName: Hazcam_Rear_L
   m_Width: 84
   m_Height: 84
-  m_Grayscale: 0
+  m_Grayscale: 1
   m_ObservationType: 0
   m_RuntimeCameraEnable: 0
   m_ObservationStacks: 1
@@ -18164,7 +18164,7 @@ MonoBehaviour:
   m_SensorName: Hazcam Front_L_Outer
   m_Width: 84
   m_Height: 84
-  m_Grayscale: 0
+  m_Grayscale: 1
   m_ObservationType: 0
   m_RuntimeCameraEnable: 0
   m_ObservationStacks: 1
