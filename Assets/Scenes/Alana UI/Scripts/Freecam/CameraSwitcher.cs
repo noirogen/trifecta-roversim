@@ -32,6 +32,15 @@ public class CameraSwitcher : MonoBehaviour
     private float nextSearch;
     private HumanRoverSpawner humanRovers;
 
+    [Tooltip("The first time a rover appears, move the free camera over it (once).")]
+    public bool centerFreeCamOnFirstRover = true;
+
+    [Tooltip("Offset from the rover when the free camera is centered on it. The camera's height is kept; " +
+            "use Z to shift it back if your free camera looks down at an angle.")]
+    public Vector3 firstFocusOffset = Vector3.zero;
+
+    private bool hasCenteredFreeCam;
+
     void Start()
     {
         if (freeCamMover == null && freeCam != null)
@@ -43,7 +52,7 @@ public class CameraSwitcher : MonoBehaviour
         // A camera assigned in the scene that isn't usable (e.g. on a disabled rover) is looked up again.
         if (roverCam != null && !roverCam.isActiveAndEnabled)
             roverCam = null;
-
+        CenterFreeCamOnRover();
         ApplyView();
     }
 
@@ -58,6 +67,7 @@ public class CameraSwitcher : MonoBehaviour
             if (found != null)
             {
                 roverCam = found;
+                CenterFreeCamOnRover(); 
                 if (switchToNewRovers)
                     isFreeCamActive = false;
                 ApplyView();
@@ -127,5 +137,26 @@ public class CameraSwitcher : MonoBehaviour
             return null;
 
         return root.GetComponentInChildren<KeyboardDriveInput>(true);
+    }
+
+    // Puts the free camera over the rover, once. Keeps the camera's current height.
+    void CenterFreeCamOnRover()
+    {
+        if (!centerFreeCamOnFirstRover || hasCenteredFreeCam || roverCam == null)
+            return;
+
+        Transform rig = freeCamMover != null ? freeCamMover.transform
+                    : freeCam != null ? freeCam.transform
+                    : null;
+        if (rig == null)
+            return;
+
+        Vector3 rover = roverCam.transform.position; // the rover camera sits on the rover
+        Vector3 p = rig.position;
+        p.x = rover.x + firstFocusOffset.x;
+        p.z = rover.z + firstFocusOffset.z;
+        rig.position = p;
+
+        hasCenteredFreeCam = true;
     }
 }

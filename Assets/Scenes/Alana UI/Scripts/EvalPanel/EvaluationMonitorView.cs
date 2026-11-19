@@ -183,12 +183,12 @@ namespace Evaluation
             Set(hitRockCountText, dash);
             Set(timedOutCountText, dash);
 
-            Set(changeLabelText, "First Run");
+            Set(changeLabelText, "Since Previous Run");
             Set(changeText, dash);
 
             if (tracker != null)
                 tracker.ClearEpisodes();
-            Set(trackerLabel, trackerLabelDefault);
+            Set(trackerLabel, dash);
         }
     }
 }
